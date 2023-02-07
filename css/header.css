@@ -1,11 +1,22 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(7px);
+  background-color: rgba(32, 81, 216, 0.7);
+  box-shadow: inset 0px -6px 1px #1f1b5f;
+  padding: 10px;
+}
+
 .header-menu {
   font-family: "Genos", sans-serif;
   display: flex;
   justify-content: end;
   text-transform: uppercase;
-  padding: 20px;
+  padding: 10px;
   gap: 60px;
   font-size: 3rem;
+  color: #fff;
 }
 
 .header-menu li::after {
@@ -13,8 +24,8 @@
   display: block;
   width: 0px;
   height: 4px;
+  background-color: #fff;
   transition: width, 0.5s;
-  background-color: black;
 }
 
 .header-menu li:hover::after {

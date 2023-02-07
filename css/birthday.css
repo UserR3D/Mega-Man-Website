@@ -1,0 +1,39 @@
+.birthday-bg {
+  margin-top: 160px;
+  background-color: #0c2269;
+  box-shadow: 0px -4px 0px #03e7dc;
+  padding: 60px;
+}
+
+.birthday {
+  display: flex;
+  gap: 160px;
+}
+
+.birthday-img {
+  position: relative;
+}
+
+[src="img/Birthday/Aniversary_30_years.png"] {
+  position: absolute;
+  width: 240px;
+  top: -10px;
+  right: -100px;
+  border-radius: 360px;
+}
+
+.birthday-text {
+  text-align: center;
+  padding: 80px;
+  background-color: #91febd;
+  border-radius: 6px;
+}
+
+.birthday-text h2 {
+  font-size: 32px;
+}
+
+.birthday-text p {
+  font-size: 32px;
+  padding-top: 60px;
+}

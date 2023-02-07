@@ -10,6 +10,10 @@ p {
   padding: 0px;
 }
 
+body {
+  background-color: #111e92;
+}
+
 ul {
   list-style: none;
 }
