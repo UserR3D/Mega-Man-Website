@@ -1,7 +1,9 @@
 .birthday-bg {
-  margin-top: 160px;
+  margin-top: 120px;
   background-color: #0c2269;
-  box-shadow: 0px -4px 0px #03e7dc;
+  border-top: solid 4px #03e7dc;
+  border-bottom: solid 4px #03e7dc;
+
   padding: 60px;
 }
 
