@@ -3,6 +3,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   height: 70vw;
+  overflow: hidden;
 }
 
 .home {
@@ -17,6 +18,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  animation: slideleft 1s;
 }
 
 .home-img img {
@@ -49,14 +51,14 @@
   background-color: red;
 }
 
-.home-img li.ativo:first-child {
+.home-img li.back:first-child {
   z-index: 0;
   transform: translate3d(60px, 60px, 0);
   opacity: 0.6;
   transition: 0.6s;
 }
 
-.home-img li.ativo:last-child {
+.home-img li.front:last-child {
   z-index: 1;
   transform: translate3d(-30px, 0, 0);
   transition: 0.6s;
@@ -64,6 +66,7 @@
 }
 
 .home-text {
+  box-sizing: border-box;
   font-family: "Genos", sans-serif;
   background-color: #000;
   color: #fff;
@@ -71,4 +74,35 @@
   font-size: 3rem;
   padding: 40px;
   border: 12px solid #ff208b;
+  animation: slideright 0.8s;
+}
+
+.rock {
+  display: block;
+}
+
+.home-img li.front.rock {
+  display: none;
+}
+
+.protoman {
+  display: none;
+}
+
+@keyframes slideright {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideleft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 }
