@@ -11,7 +11,7 @@ p {
 }
 
 body {
-  background-color: #111e92;
+  background-color: #2443cf;
 }
 
 ul {
@@ -32,4 +32,12 @@ img {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+[data-anime="scroll"] {
+  opacity: 0;
+  transition: 1s;
+}
+[data-anime="scroll"].ativo {
+  opacity: 1;
 }

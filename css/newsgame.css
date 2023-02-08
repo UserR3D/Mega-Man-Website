@@ -46,14 +46,6 @@
   padding: 10px;
 }
 
-.view iframe {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  bottom: -60px;
-  left: -20px;
-}
-
 .name-game {
   margin-top: 30px;
   gap: 20px;
