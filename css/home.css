@@ -10,7 +10,7 @@
   padding-top: 15vw;
   display: grid;
   align-items: center;
-  grid-template-columns: 1fr 600px;
+  grid-template-columns: 1fr 1fr;
 }
 
 .home-img {
@@ -72,21 +72,29 @@
   color: #fff;
   border-radius: 10px;
   font-size: 3rem;
-  padding: 40px;
+  padding: 30px;
   border: 12px solid #ff208b;
   animation: slideright 0.8s;
-}
-
-.rock {
-  display: block;
+  height: 650px;
 }
 
 .home-img li.front.rock {
   display: none;
 }
 
-.protoman {
+.text-r {
   display: none;
+}
+.text-r.ativo {
+  display: block;
+}
+
+.text-p {
+  display: none;
+}
+
+.text-p.ativo {
+  display: block;
 }
 
 @keyframes slideright {

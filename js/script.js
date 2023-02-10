@@ -15,18 +15,47 @@ function handleScroll() {
 
 window.addEventListener("scroll", handleScroll);
 
-const homeUl = document.querySelectorAll(".home-img");
 const homeLi = document.querySelectorAll(".home-img li");
-
-function handleClick() {
-  const homeC = homeLi[0].classList.contains("back");
-  if (!homeC) {
-    homeLi[0].nextElementSibling.classList.add("front");
-    homeLi[0].classList.add("back");
+const homeP = homeLi[0];
+const p = document.querySelector(".text-r");
+p.classList.add("ativo");
+function textTransform() {
+  if (homeP.classList.contains("back")) {
+    p.classList.remove("ativo");
+    p.nextElementSibling.classList.add("ativo");
   } else {
-    homeLi[0].nextElementSibling.classList.remove("front");
-    homeLi[0].classList.remove("back");
+    p.nextElementSibling.classList.remove("ativo");
+    p.classList.add("ativo");
   }
 }
 
-addEventListener("click", handleClick);
+const selector = document.querySelectorAll("[data-select]");
+function handleClick() {
+  const homeC = homeLi[0].classList.contains("back");
+  if (!homeC) {
+    homeP.nextElementSibling.classList.add("front");
+    homeP.classList.add("back");
+    textTransform();
+  } else {
+    homeP.nextElementSibling.classList.remove("front");
+    homeP.classList.remove("back");
+    textTransform();
+  }
+}
+
+function selectorfun(index) {
+  if (index - 1) {
+    console.log("oi");
+  } else {
+    console.log("tchau");
+  }
+}
+
+selector.forEach((i, index) => {
+  i.addEventListener("click", () => {
+    selectorfun(index);
+  });
+});
+homeLi.forEach((i) => {
+  i.addEventListener("click", handleClick);
+});
