@@ -1,8 +1,7 @@
 export default class Click {
-  constructor(element, text, select) {
+  constructor(element, text) {
     this.imgClick = document.querySelectorAll(element);
     this.text = document.querySelectorAll(text);
-    this.selection = document.querySelectorAll(select);
   }
   // #region HomeClick
   textAppear() {
@@ -38,11 +37,6 @@ export default class Click {
     this.imgClick.forEach((i) => {
       i.addEventListener("click", () => {
         this.clickHome();
-      });
-    });
-    this.selection.forEach((c, index) => {
-      c.addEventListener("click", () => {
-        this.selectCharacter(index);
       });
     });
   }
