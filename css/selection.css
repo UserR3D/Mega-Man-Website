@@ -11,7 +11,7 @@
   z-index: 0px;
   margin: 80px auto;
   cursor: pointer;
-  filter: drop-shadow(0px 0px 0px #4444dd);
+  filter: drop-shadow(0px 0px 0px rgb(79, 106, 226));
   transition: filter, 0.6s;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .selection-rock img:hover {
-  filter: drop-shadow(10px 10px 0px #4444dd);
+  filter: drop-shadow(-25px 10px 0px #0231ff);
 }
 
 .selection-x::before {
@@ -44,7 +44,7 @@
 }
 
 .selection-x img:hover {
-  filter: drop-shadow(25px 10px 0px #4444dd);
+  filter: drop-shadow(25px 10px 0px #8400ff);
   transition: filter, 0.6s;
 }
 
