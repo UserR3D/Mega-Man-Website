@@ -1,27 +1,40 @@
+import debounce from "./debouce.js";
 export default class Scroll {
   constructor(propriety) {
     this.dataScroll = document.querySelectorAll(propriety);
-    this.handleScroll = this.handleScroll.bind(this);
+    this.windowHalf = window.innerHeight * 0.6;
+    this.checkDistance = debounce(this.checkDistance.bind(this), 80);
   }
 
-  handleScroll() {
-    this.dataScroll.forEach((s) => {
-      const windowHalf = window.innerHeight * 0.6;
-      const scrollActive = s.getBoundingClientRect().top;
-      const scrollV = windowHalf - scrollActive > 0;
-      if (scrollV) {
-        s.classList.add("ativo");
-      } else {
-        s.classList.remove("ativo");
-      }
+  getDistance() {
+    this.distance = [...this.dataScroll].map((s) => {
+      const offset = s.offsetTop;
+      return {
+        element: s,
+        offset: Math.floor(offset - this.windowHalf),
+      };
+    });
+  }
+
+  checkDistance() {
+    this.distance.forEach((i) => {
+      if (window.scrollY > i.offset) i.element.classList.add("ativo");
+      else i.element.classList.remove("ativo");
     });
   }
 
   addEventScroll() {
-    window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("scroll", this.checkDistance);
   }
 
   init() {
-    this.addEventScroll();
+    if (this.dataScroll.length) {
+      this.getDistance();
+      this.addEventScroll();
+    }
+    return this;
+  }
+  stop() {
+    window.removeEventListener("scroll", this.checkDistance);
   }
 }
