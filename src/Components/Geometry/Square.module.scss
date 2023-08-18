@@ -1,0 +1,41 @@
+.square {
+  display: flex;
+  justify-self: center;
+  margin: 20rem 0;
+  & img {
+    position: relative;
+    padding: 2.5rem;
+    border-radius: 2.5rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: transform 0.5s;
+  }
+}
+
+.square img:first-child {
+  background-color: #1753eb;
+  z-index: 1;
+}
+
+.square img:last-child {
+  background-color: red;
+  transform: translate(-280px, 30px);
+  filter: blur(4px);
+  order: 2;
+}
+
+.square:global(.active) img:first-child {
+  background-color: #1753eb;
+  z-index: 0;
+  transform: translate(-280px, 30px);
+  filter: blur(4px);
+  order: 2;
+}
+
+.square:global(.active) img:last-child {
+  background-color: red;
+  transform: translate(0px, 0px);
+  filter: blur(0);
+  z-index: 1;
+  order: 1;
+}

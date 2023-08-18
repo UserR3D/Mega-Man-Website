@@ -1,3 +1,12 @@
+* {
+  @font-face {
+    font-family: "MMRock9";
+    src: url("assets/mmrock9/MMRock9.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
 body,
 p,
 ul,
@@ -24,4 +33,9 @@ a {
 img {
   max-width: 100%;
   display: block;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
 }
