@@ -16,18 +16,10 @@ const Collections = () => {
         <Wave />
       </div>
       <div className={`container ${styles.collectionMain}`}>
-        <Collection
-          width={"600px"}
-          height={"600px"}
-          className={styles.collection}
-        >
+        <Collection width={"600px"} height={"600px"}>
           <img src={Legacy1} alt="Collection 1" />
         </Collection>
-        <Collection
-          width={"600px"}
-          height={"600px"}
-          className={styles.collection}
-        >
+        <Collection width={"600px"} height={"600px"}>
           <img src={Legacy2} alt="Collection 2" />
         </Collection>
       </div>

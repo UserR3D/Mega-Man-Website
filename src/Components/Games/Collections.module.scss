@@ -36,24 +36,12 @@
     display: grid;
     align-items: center;
     grid-template-columns: 1fr 1fr;
-    .collection {
-      display: grid;
-      grid-template-rows: 1fr 1fr;
-      position: relative;
-      margin-bottom: 14rem;
-      & img {
-        border: 5px #fff solid;
-      }
-      & ul {
-        max-width: 300px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #b9d7e4;
-        padding: 20px 20px;
-        gap: 1.5rem;
-      }
+    margin-bottom: 14rem;
+    & img {
+      padding-bottom: 25px;
+    }
+    & [data-anime^="slide"] {
+      animation: Slide 0.4s;
     }
   }
   .chatBox {
@@ -80,5 +68,16 @@
     & svg {
       transform: scale(-1);
     }
+  }
+}
+
+@keyframes Slide {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0);
   }
 }
