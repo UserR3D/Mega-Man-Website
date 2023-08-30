@@ -1,5 +1,5 @@
 .header {
-  font-family: "MMRock9";
+  font-family: "Press Start 2P", cursive;
   padding-bottom: 9.4rem;
   font-size: 1.4rem;
   & ul {
@@ -14,6 +14,9 @@
     clip-path: polygon(0 0, 100% 0%, 91% 100%, 0% 100%);
     backdrop-filter: blur(8px);
     filter: opacity(0.9);
+    & li {
+      cursor: pointer;
+    }
     & li::after {
       content: "";
       display: block;

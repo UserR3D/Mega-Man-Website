@@ -1,10 +1,18 @@
-import styles from "./Square.module.scss";
-
-const Square = ({ width, height, targetClick, children }) => {
+const Square = ({
+  width,
+  height,
+  className,
+  targetClick,
+  onMouseOver,
+  onMouseOut,
+  children,
+}) => {
   return (
     <div
-      className={styles.square}
+      className={className}
       onClick={targetClick}
+      onMouseOver={onMouseOver}
+      onMouseOut={onMouseOut}
       style={{ width: width, height: height }}
     >
       {children}

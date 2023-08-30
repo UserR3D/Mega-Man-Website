@@ -1,21 +1,28 @@
 import React from "react";
 import styles from "./Information.module.scss";
 import Square from "../Geometry/Square";
-import ChatBox from "./ChatBox";
-import MegaMan from "/public/Home_MegaMan.png";
-import ProtoMan from "/public/Home_ProtoMan.png";
+import ChatBox from "../Geometry/ChatBox";
+import MegaMan from "../../assets/Home_MegaMan.png";
+import ProtoMan from "../../assets/Home_ProtoMan.png";
 const Information = () => {
   const [active, setActive] = React.useState(false);
+
   function targetClick({ currentTarget }) {
     setActive(currentTarget.classList.toggle("active"));
   }
+
   return (
     <div className={`container ${styles.information}`}>
-      <Square width={"500px"} height={"500px"} targetClick={targetClick}>
+      <Square
+        width={"500px"}
+        height={"500px"}
+        targetClick={targetClick}
+        className={styles.square}
+      >
         <img src={MegaMan} alt="Mega Man - Home" />
         <img src={ProtoMan} alt="Proto Man - Home" />
       </Square>
-      <ChatBox>
+      <ChatBox className={styles.chatBox}>
         {!active ? (
           <p>
             Rock é o assistente de Dr. Light sendo criado para ajudar em suas

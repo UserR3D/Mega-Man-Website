@@ -1,4 +1,4 @@
-import Helmet from "/public/Helmet-Header.png";
+import Helmet from "./assets/Helmet-Header.png";
 import styles from "./Header.module.scss";
 
 const Header = () => {
