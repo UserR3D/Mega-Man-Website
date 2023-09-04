@@ -1,14 +1,20 @@
 import React from "react";
 import styles from "./Information.module.scss";
+import { GlobalContext } from "../../GlobalContext";
 import Square from "../Geometry/Square";
 import ChatBox from "../Geometry/ChatBox";
 import MegaMan from "../../assets/Home_MegaMan.png";
 import ProtoMan from "../../assets/Home_ProtoMan.png";
 const Information = () => {
-  const [active, setActive] = React.useState(false);
+  const { robot, setRobot } = React.useContext(GlobalContext);
 
   function targetClick({ currentTarget }) {
-    setActive(currentTarget.classList.toggle("active"));
+    currentTarget.classList.toggle("active");
+    if (robot === "megaman") {
+      setRobot("protoman");
+    } else {
+      setRobot("megaman");
+    }
   }
 
   return (
@@ -24,7 +30,7 @@ const Information = () => {
           <img src={ProtoMan} alt="Proto Man - Home" />
         </Square>
         <ChatBox className={styles.chatBox}>
-          {!active ? (
+          {robot === "megaman" ? (
             <p>
               Rock é o assistente de Dr. Light sendo criado para ajudar em suas
               tarefas domesticas, porém com as atitudes do temível Dr. Willy,
