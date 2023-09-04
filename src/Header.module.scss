@@ -1,3 +1,4 @@
+@import "./index.scss";
 .header {
   font-family: "Press Start 2P", cursive;
   padding-bottom: 9.4rem;
@@ -33,6 +34,19 @@
     & li:last-child {
       color: #fff;
       font-weight: bold;
+    }
+  }
+}
+
+@media (max-width: $break-point-large) {
+  .header {
+    ul {
+      width: auto;
+      background: #00b2ff;
+      clip-path: none;
+      li {
+        display: none;
+      }
     }
   }
 }

@@ -1,3 +1,5 @@
+import styles from "./Square.module.scss";
+
 const Square = ({
   width,
   height,
@@ -9,7 +11,7 @@ const Square = ({
 }) => {
   return (
     <div
-      className={className}
+      className={`${className} ${styles.square}`}
       onClick={targetClick}
       onMouseOver={onMouseOver}
       onMouseOut={onMouseOut}

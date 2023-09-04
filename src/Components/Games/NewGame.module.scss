@@ -1,48 +1,42 @@
+@import "../../index.scss";
+
 .newGame {
   background-color: #0099ff;
-  padding: 6rem 0;
-  display: flex;
-  justify-content: center;
+  padding: 6rem 0rem;
+  & div {
+    padding: 1rem;
+    gap: 0.4rem;
+  }
   & [data-anime^="slide"] {
-    animation: Slide 0.4s;
+    animation: Slide-left 0.4s;
+    flex-direction: column;
+    background-color: #d7efff;
+
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 6px;
+      height: 20px;
+      background-color: #000;
+      left: 5.7rem;
+    }
+    &::before {
+      top: 29rem;
+    }
+    &::after {
+      top: 5rem;
+    }
   }
   & div {
     display: flex;
     flex-direction: row-reverse;
     border: none;
-    & img {
-      border: 5px #fff solid;
-    }
-    & ul {
-      flex-direction: column;
-      background-color: #d7efff;
-      margin-right: 4px;
-      &::after,
-      &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 6px;
-        height: 20px;
-        background-color: #000;
-        right: -5px;
-      }
-      &::before {
-        top: 29rem;
-        left: 6.8rem;
-      }
-      &::after {
-        top: 5rem;
-      }
-      & svg {
-        width: 70px;
-        height: 70px;
-      }
-    }
   }
 }
 
-@keyframes Slide {
+@keyframes Slide-left {
   from {
     opacity: 0;
     transform: translateX(-50px);
@@ -50,5 +44,49 @@
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@media (max-width: $break-point-large) {
+  .newGame {
+    [data-anime^="slide"] {
+      &::after,
+      &::before {
+        left: 5.6rem;
+      }
+      &::after {
+        top: 5rem;
+      }
+      &::before {
+        top: 25rem;
+      }
+    }
+  }
+}
+
+@media (max-width: $break-point-medium) {
+  .newGame {
+    padding: 1rem;
+    div {
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    [data-anime^="slide"] {
+      flex-direction: row;
+      margin: 0;
+      &::before {
+        left: 4rem;
+        top: -1.2rem;
+      }
+      &::after {
+        left: 13rem;
+        top: -1.2rem;
+      }
+
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
   }
 }

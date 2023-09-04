@@ -11,11 +11,13 @@ import styles from "./Collections.module.scss";
 const Collections = () => {
   return (
     <section className={styles.collections}>
-      <div className={styles.banner}>
+      <div className={`flex-center ${styles.banner}`}>
         <h2>Coletânea de jogos retros do robo azul</h2>
         <Wave />
       </div>
-      <div className={`container ${styles.collectionMain}`}>
+      <div
+        className={`container grid-2fr grid-center ${styles.collectionMain}`}
+      >
         <Collection width={"600px"} height={"600px"}>
           <img src={Legacy1} alt="Collection 1" />
         </Collection>
@@ -23,12 +25,11 @@ const Collections = () => {
           <img src={Legacy2} alt="Collection 2" />
         </Collection>
       </div>
-      <ChatBox className={`container ${styles.chatBox}`}>
-        <p>
-          Experiencie a clássica aventura de Rock contra seus maiores inimigos
-        </p>
+      <ChatBox>
+        Experiencie a clássica aventura de Rock contra seus maiores inimigos
       </ChatBox>
-      <span className={styles.endCollection}>
+
+      <div className={styles.endCollection}>
         <img
           src={MegaSprite}
           alt="Mega Man - Sprite"
@@ -42,7 +43,7 @@ const Collections = () => {
           height={"132px"}
         />
         <Wave2 />
-      </span>
+      </div>
     </section>
   );
 };

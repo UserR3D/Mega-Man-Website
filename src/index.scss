@@ -32,3 +32,32 @@ img {
   max-width: 1400px;
   margin: 0 auto;
 }
+
+.grid-center {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-2fr {
+  grid-template-columns: 1fr 1fr;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$break-point-large: 1250px;
+$break-point-medium: 768px;
+$break-point-small: 320px;
+
+@media (max-width: $break-point-large) {
+  .flex-center {
+    flex-direction: column;
+  }
+  .grid-2fr {
+    grid-template-columns: 1fr;
+  }
+}

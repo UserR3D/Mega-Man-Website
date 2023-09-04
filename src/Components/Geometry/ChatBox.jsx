@@ -1,5 +1,6 @@
-const ChatBox = ({ className, children }) => {
-  return <div className={className}>{children}</div>;
+import styles from "./ChatBox.module.scss";
+const ChatBox = ({ children }) => {
+  return <div className={styles.chatBox}>{children}</div>;
 };
 
 export default ChatBox;

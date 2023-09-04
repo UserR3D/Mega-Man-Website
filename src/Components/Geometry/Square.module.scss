@@ -1,0 +1,15 @@
+@import "../../index.scss";
+
+@media (max-width: $break-point-large) {
+  .square {
+    max-width: 500px;
+    max-height: 500px;
+  }
+}
+
+@media (max-width: $break-point-medium) {
+  .square {
+    max-width: 300px;
+    max-height: 300px;
+  }
+}
