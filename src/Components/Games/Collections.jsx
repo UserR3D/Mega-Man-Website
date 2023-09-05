@@ -6,6 +6,7 @@ import Legacy1 from "../../assets/Mega_Man_Legacy_Collection1.png";
 import Legacy2 from "../../assets/Mega_Man_Legacy_Collection2.webp";
 import { ReactComponent as Wave } from "../../assets/wave2.svg";
 import MegaSprite from "../../assets/Mega Man Sprite.png";
+import ProtomanSprite from "../../assets/Protoman-sprite.png";
 import Met from "../../assets/met enemy.png";
 import styles from "./Collections.module.scss";
 
@@ -47,12 +48,23 @@ const Collections = () => {
       </ChatBox>
 
       <div className={styles.endCollection}>
-        <img
-          src={MegaSprite}
-          alt="Mega Man - Sprite"
-          width={"248px"}
-          height={"248px"}
-        />
+        {robot === "megaman" ? (
+          <img
+            src={MegaSprite}
+            alt="Mega Man - Sprite"
+            width={"248px"}
+            height={"248px"}
+          />
+        ) : (
+          robot === "protoman" && (
+            <img
+              src={ProtomanSprite}
+              alt="Proto Man - Sprite"
+              width={"300px"}
+              style={{ transform: "scaleX(-1)" }}
+            />
+          )
+        )}
         <img
           src={Met}
           alt="Met Enemy - Sprite"
